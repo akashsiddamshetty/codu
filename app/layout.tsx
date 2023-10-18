@@ -8,6 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import Nav from "@/components/Nav/Nav";
 import { getServerAuthSession } from "@/server/auth";
 import AuthProvider from "@/context/AuthProvider";
+import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 // @TODO layout app in way that doesn't need to use client session check
 
 export const metadata = {
@@ -39,6 +40,7 @@ export default async function RootLayout({
             <TRPCReactProvider headers={headers()}>
               <Nav session={session} />
               {children}
+              <ScrollToTop />
               <Footer />
             </TRPCReactProvider>
           </ThemeProvider>
